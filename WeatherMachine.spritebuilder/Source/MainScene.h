@@ -9,5 +9,10 @@
 #import "CCNode.h"
 
 @interface MainScene : CCNode
+{
+    //Spritebuilder code linking
+    CCButton *_playButton;
+    //End spritebuilder code linking
+}
 
 @end
