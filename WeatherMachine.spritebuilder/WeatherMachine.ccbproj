@@ -80,6 +80,21 @@
 			<key>previewFolderHidden</key>
 			<true/>
 		</dict>
+		<key>Art/AsteroidLarge.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>Art/PurpleFins200dpi.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
+		<key>Art/PurpleFins300dpi.png</key>
+		<dict>
+			<key>scaleFrom</key>
+			<integer>2</integer>
+		</dict>
 		<key>Sprites</key>
 		<dict/>
 		<key>ccbResources</key>

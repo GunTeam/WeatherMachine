@@ -15,8 +15,7 @@
 }
 
 -(void) play{
-    CCScene *gamescene = (CCScene *) [CCBReader load:@"GameScene"];
-    [[CCDirector sharedDirector]replaceScene:gamescene];
+    [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"GameScene"]];
 }
 
 @end

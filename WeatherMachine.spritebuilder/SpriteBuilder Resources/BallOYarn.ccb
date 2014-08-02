@@ -40,7 +40,7 @@
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string>Cat</string>
+		<string>BallOYarn</string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
@@ -54,7 +54,7 @@
 			<key>allowsRotation</key>
 			<true/>
 			<key>bodyShape</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>collisionCategories</key>
 			<array/>
 			<key>collisionMask</key>
@@ -62,7 +62,7 @@
 			<key>collisionType</key>
 			<string></string>
 			<key>cornerRadius</key>
-			<real>0.0</real>
+			<real>26.551002502441406</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
@@ -74,135 +74,12 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>3.22560715675354</real>
-					<real>3.6178102493286133</real>
-				</array>
-				<array>
-					<real>6.0840134620666504</real>
-					<real>32.572528839111328</real>
-				</array>
-				<array>
-					<real>21.257987976074219</real>
-					<real>36.826343536376953</real>
-				</array>
-				<array>
-					<real>22.263116836547852</real>
-					<real>52.620620727539062</real>
-				</array>
-				<array>
-					<real>25.934785842895508</real>
-					<real>67.406494140625</real>
-				</array>
-				<array>
-					<real>32.686161041259766</real>
-					<real>75.64703369140625</real>
-				</array>
-				<array>
-					<real>33.752342224121094</real>
-					<real>86.846275329589844</real>
-				</array>
-				<array>
-					<real>37.801204681396484</real>
-					<real>76.41778564453125</real>
-				</array>
-				<array>
-					<real>46.029754638671875</real>
-					<real>68.20013427734375</real>
-				</array>
-				<array>
-					<real>53.084194183349609</real>
-					<real>52.941127777099609</real>
-				</array>
-				<array>
-					<real>54.949462890625</real>
-					<real>36.095935821533203</real>
-				</array>
-				<array>
-					<real>69.64703369140625</real>
-					<real>31.856292724609375</real>
-				</array>
-				<array>
-					<real>73.998970031738281</real>
-					<real>4.5629816055297852</real>
+					<real>26.685821533203125</real>
+					<real>26.443563461303711</real>
 				</array>
 			</array>
 			<key>polygons</key>
-			<array>
-				<array>
-					<array>
-						<real>21.257987976074219</real>
-						<real>36.826343536376953</real>
-					</array>
-					<array>
-						<real>6.0840134620666504</real>
-						<real>32.572528839111328</real>
-					</array>
-					<array>
-						<real>3.22560715675354</real>
-						<real>3.6178102493286133</real>
-					</array>
-					<array>
-						<real>73.998970031738281</real>
-						<real>4.5629816055297852</real>
-					</array>
-					<array>
-						<real>69.64703369140625</real>
-						<real>31.856292724609375</real>
-					</array>
-					<array>
-						<real>54.949462890625</real>
-						<real>36.095935821533203</real>
-					</array>
-				</array>
-				<array>
-					<array>
-						<real>37.801204681396484</real>
-						<real>76.41778564453125</real>
-					</array>
-					<array>
-						<real>33.752342224121094</real>
-						<real>86.846275329589844</real>
-					</array>
-					<array>
-						<real>32.686161041259766</real>
-						<real>75.64703369140625</real>
-					</array>
-				</array>
-				<array>
-					<array>
-						<real>32.686161041259766</real>
-						<real>75.64703369140625</real>
-					</array>
-					<array>
-						<real>25.934785842895508</real>
-						<real>67.406494140625</real>
-					</array>
-					<array>
-						<real>22.263116836547852</real>
-						<real>52.620620727539062</real>
-					</array>
-					<array>
-						<real>21.257987976074219</real>
-						<real>36.826343536376953</real>
-					</array>
-					<array>
-						<real>54.949462890625</real>
-						<real>36.095935821533203</real>
-					</array>
-					<array>
-						<real>53.084194183349609</real>
-						<real>52.941127777099609</real>
-					</array>
-					<array>
-						<real>46.029754638671875</real>
-						<real>68.20013427734375</real>
-					</array>
-					<array>
-						<real>37.801204681396484</real>
-						<real>76.41778564453125</real>
-					</array>
-				</array>
-			</array>
+			<array/>
 		</dict>
 		<key>properties</key>
 		<array>
@@ -260,7 +137,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>Art/PurpleFins300dpi.png</string>
+					<string>Art/AsteroidLarge.png</string>
 				</array>
 			</dict>
 			<dict>

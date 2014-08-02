@@ -38,6 +38,7 @@
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		BAA23FA6198C58AD0095FE5C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA23FA5198C58AD0095FE5C /* GameScene.m */; };
 		BAA23FAA198C58C20095FE5C /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA23FA9198C58C20095FE5C /* Cat.m */; };
+		BAA23FAF198C7B1F0095FE5C /* BallOYarn.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA23FAE198C7B1F0095FE5C /* BallOYarn.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		BAA23FA5198C58AD0095FE5C /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		BAA23FA8198C58C20095FE5C /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		BAA23FA9198C58C20095FE5C /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		BAA23FAD198C7B1F0095FE5C /* BallOYarn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallOYarn.h; sourceTree = "<group>"; };
+		BAA23FAE198C7B1F0095FE5C /* BallOYarn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallOYarn.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 			children = (
 				BAA23FA8198C58C20095FE5C /* Cat.h */,
 				BAA23FA9198C58C20095FE5C /* Cat.m */,
+				BAA23FAD198C7B1F0095FE5C /* BallOYarn.h */,
+				BAA23FAE198C7B1F0095FE5C /* BallOYarn.m */,
 			);
 			name = "Sprite Files";
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA23FAF198C7B1F0095FE5C /* BallOYarn.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				BAA23FA6198C58AD0095FE5C /* GameScene.m in Sources */,

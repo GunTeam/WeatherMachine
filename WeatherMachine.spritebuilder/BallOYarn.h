@@ -1,5 +1,5 @@
 //
-//  GameScene.h
+//  BallOYarn.h
 //  WeatherMachine
 //
 //  Created by Jorrie Brettin on 8/1/14.
@@ -8,16 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-#import "Cat.h"
-#import "BallOYarn.h"
 
-@interface GameScene : CCNode <CCPhysicsCollisionDelegate> {
+@interface BallOYarn : CCSprite {
     CGFloat screenWidth,screenHeight;
-    Cat *mainCat;
-    CCPhysicsNode *_physicsNode;
 }
 
-@property int level;
-@property double dropVelocity;
+-(void) setVelocity:(double)desiredVelocity;
 
 @end

@@ -11,4 +11,11 @@
 
 @implementation Cat
 
+-(void) didLoadFromCCB {
+    self.physicsBody.collisionType = @"cat";
+    self.physicsBody.collisionGroup = @"CatGroup";
+}
+
+
+
 @end
