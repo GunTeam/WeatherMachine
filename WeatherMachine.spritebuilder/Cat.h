@@ -10,7 +10,11 @@
 #import "cocos2d.h"
 
 @interface Cat : CCSprite {
-    
+    CCAnimationManager *animationManager;
+
 }
+@property bool collidable;
+
+-(void) deathAnimation;
 
 @end

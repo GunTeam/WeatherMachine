@@ -12,10 +12,16 @@
 @implementation Cat
 
 -(void) didLoadFromCCB {
+    self.collidable = true;
     self.physicsBody.collisionType = @"cat";
     self.physicsBody.collisionGroup = @"CatGroup";
+    animationManager = self.userObject;
 }
 
+-(void) deathAnimation {
+    self.collidable = false;
+    [animationManager runAnimationsForSequenceNamed:@"Death"];
+}
 
 
 @end

@@ -57,9 +57,15 @@ double dropInterval = 1.2;
     CCLOG(@"collision occurred");
     //this just resets the scene
     //can be changed to actually do things like a crash animation and whatnot
-    [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"GameScene"]];
-    
+    if(mainCat.collidable == true){
+        [mainCat deathAnimation];
+        [self scheduleOnce:@selector(resetGame) delay:2];
+    }
     return true;
+}
+
+-(void) resetGame{
+    [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"GameScene"]];
 }
 
 -(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
