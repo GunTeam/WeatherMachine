@@ -15,6 +15,7 @@
     CGFloat screenWidth,screenHeight;
     Cat *mainCat;
     CCPhysicsNode *_physicsNode;
+    CGPoint currentTouch;
 }
 
 @property int level;
