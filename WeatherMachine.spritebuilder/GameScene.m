@@ -7,10 +7,12 @@
 //
 
 #import "GameScene.h"
+#import "Cloud.h"
 
 //debugging/playtesting variables
 double dropVelocity = 200;
 double dropInterval = 1.2;
+Cloud *cloud;
 
 @implementation GameScene
 
@@ -39,6 +41,12 @@ double dropInterval = 1.2;
     mainCat.scale = .8;
     [_physicsNode addChild:mainCat];
     
+    cloud = (Cloud*)[CCBReader load:@"Cloud"];
+    cloud.position = CGPointMake(screenWidth/2, screenHeight*(99./100));
+    cloud.scale = .8;
+    [self addChild:cloud];
+    
+    
 //    BallOYarn *yarn = (BallOYarn *)[CCBReader load:@"BallOYarn"];
 //    yarn.position = CGPointMake(screenWidth/2, screenHeight);
 //    yarn.physicsBody.velocity = CGPointMake(0, -150);
@@ -46,8 +54,19 @@ double dropInterval = 1.2;
     //[self schedule:@selector(addBallOYarn:) interval:dropInterval];
 }
 
--(void) addBallOYarn:(CCTime)delta{
+-(void) addRainDrop:(CCTime)delta{
+
+    
     BallOYarn *yarn = (BallOYarn *)[CCBReader load:@"BallOYarn"];
+    
+    //generate random x position where the sprite will still be fully on the screen
+    int randRange = screenWidth-yarn.contentSizeInPoints.width;
+    float posX = arc4random()%(randRange) + yarn.contentSizeInPoints.width/2;
+    
+    //assign sprite to generated x position and to y position just above the screen
+    cloud.position = CGPointMake(posX, screenHeight*(99./100));
+    yarn.position = CGPointMake(posX, screenHeight+yarn.contentSizeInPoints.height/2);
+    
     [_physicsNode addChild:yarn];
     [yarn setVelocity:self.dropVelocity];
 
@@ -116,7 +135,7 @@ double dropInterval = 1.2;
     float rand = arc4random()%70;
     
     if(rand <2){
-        [self addBallOYarn:0];
+        [self addRainDrop:0];
     }
 }
 

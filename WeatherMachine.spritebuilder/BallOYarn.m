@@ -18,13 +18,6 @@
     screenWidth = screenSize.width;
     screenHeight = screenSize.height;
     
-    //generate random x position where the sprite will still be fully on the screen
-    int randRange = screenWidth-self.contentSizeInPoints.width;
-    float posX = arc4random()%(randRange) + self.contentSizeInPoints.width/2;
-
-    //assign sprite to generated x position and to y position just above the screen
-    self.position = CGPointMake(posX, screenHeight+self.contentSizeInPoints.height/2);
-    
     self.physicsBody.angularVelocity = (arc4random() % 60 + 1)*.1 ;
     
     self.physicsBody.collisionType = @"balloyarn";
