@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "Cloud.h"
+#import "SpeedUp.h"
 
 //debugging/playtesting variables
 double dropVelocity = 200;
@@ -55,20 +56,32 @@ Cloud *cloud;
 }
 
 -(void) addRainDrop:(CCTime)delta{
-
     
-    BallOYarn *yarn = (BallOYarn *)[CCBReader load:@"BallOYarn"];
+    float rand = arc4random()%70;
+    
+    BallOYarn *raindrop = (BallOYarn *)[CCBReader load:@"BallOYarn"];
+    SpeedUp *greendrop = (SpeedUp *)[CCBReader load:@"SpeedUp"];
     
     //generate random x position where the sprite will still be fully on the screen
-    int randRange = screenWidth-yarn.contentSizeInPoints.width;
-    float posX = arc4random()%(randRange) + yarn.contentSizeInPoints.width/2;
+    int randRange = screenWidth-raindrop.contentSizeInPoints.width;
+    float posX = arc4random()%(randRange) + raindrop.contentSizeInPoints.width/2;
     
     //assign sprite to generated x position and to y position just above the screen
     cloud.position = CGPointMake(posX, screenHeight*(99./100));
-    yarn.position = CGPointMake(posX, screenHeight+yarn.contentSizeInPoints.height/2);
-    
-    [_physicsNode addChild:yarn];
-    [yarn setVelocity:self.dropVelocity];
+    //With a probability of 2/70, make the raindrop a powerup
+    if(rand <2){
+        greendrop.position = CGPointMake(posX, screenHeight+greendrop.contentSizeInPoints.height/2);
+        
+        [_physicsNode addChild:greendrop];
+        [greendrop setVelocity:self.dropVelocity];
+    }
+    else{
+        raindrop.position = CGPointMake(posX, screenHeight+raindrop.contentSizeInPoints.height/2);
+        
+        [_physicsNode addChild:raindrop];
+        [raindrop setVelocity:self.dropVelocity];
+    }
+
 
 }
 
@@ -134,7 +147,7 @@ Cloud *cloud;
     }
     float rand = arc4random()%70;
     
-    if(rand <2){
+    if(rand <1){
         [self addRainDrop:0];
     }
 }
