@@ -10,9 +10,9 @@
 
 @implementation MainScene
 
--(void) didLoadFromCCB {
-    //add additional initialization code
-}
+//-(void) didLoadFromCCB {
+//    //add additional initialization code
+//}
 
 -(void) play{
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"GameScene"]];

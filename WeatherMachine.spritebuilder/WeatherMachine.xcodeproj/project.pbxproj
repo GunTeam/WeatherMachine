@@ -36,7 +36,10 @@
 		B77F1B3E17B978D7009739AE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		BA8AD81419BF85E30048B622 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AD81319BF85E30048B622 /* Background.m */; };
+		BA8AD81819BF92590048B622 /* ShrinkDrop.m in Sources */ = {isa = PBXBuildFile; fileRef = BA8AD81719BF92590048B622 /* ShrinkDrop.m */; };
 		BA9E4D7419BE4AE600E9E061 /* SpeedUp.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9E4D7319BE4AE600E9E061 /* SpeedUp.m */; };
+		BA9E4D7719BE522900E9E061 /* SlowDown.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9E4D7619BE522900E9E061 /* SlowDown.m */; };
 		BA9F0FA119BCFB5C003B2C84 /* Cloud.m in Sources */ = {isa = PBXBuildFile; fileRef = BA9F0FA019BCFB5C003B2C84 /* Cloud.m */; };
 		BAA23FA6198C58AD0095FE5C /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA23FA5198C58AD0095FE5C /* GameScene.m */; };
 		BAA23FAA198C58C20095FE5C /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA23FA9198C58C20095FE5C /* Cat.m */; };
@@ -95,8 +98,14 @@
 		B77F1B3F17B978D7009739AE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
+		BA8AD81219BF85E30048B622 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		BA8AD81319BF85E30048B622 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
+		BA8AD81619BF92590048B622 /* ShrinkDrop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShrinkDrop.h; sourceTree = "<group>"; };
+		BA8AD81719BF92590048B622 /* ShrinkDrop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShrinkDrop.m; sourceTree = "<group>"; };
 		BA9E4D7219BE4AE600E9E061 /* SpeedUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedUp.h; sourceTree = "<group>"; };
 		BA9E4D7319BE4AE600E9E061 /* SpeedUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedUp.m; sourceTree = "<group>"; };
+		BA9E4D7519BE522900E9E061 /* SlowDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlowDown.h; sourceTree = "<group>"; };
+		BA9E4D7619BE522900E9E061 /* SlowDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlowDown.m; sourceTree = "<group>"; };
 		BA9F0F9F19BCFB5C003B2C84 /* Cloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cloud.h; sourceTree = "<group>"; };
 		BA9F0FA019BCFB5C003B2C84 /* Cloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cloud.m; sourceTree = "<group>"; };
 		BAA23FA4198C58AD0095FE5C /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
@@ -244,6 +253,12 @@
 				BA9F0FA019BCFB5C003B2C84 /* Cloud.m */,
 				BA9E4D7219BE4AE600E9E061 /* SpeedUp.h */,
 				BA9E4D7319BE4AE600E9E061 /* SpeedUp.m */,
+				BA9E4D7519BE522900E9E061 /* SlowDown.h */,
+				BA9E4D7619BE522900E9E061 /* SlowDown.m */,
+				BA8AD81619BF92590048B622 /* ShrinkDrop.h */,
+				BA8AD81719BF92590048B622 /* ShrinkDrop.m */,
+				BA8AD81219BF85E30048B622 /* Background.h */,
+				BA8AD81319BF85E30048B622 /* Background.m */,
 			);
 			name = "Sprite Files";
 			sourceTree = "<group>";
@@ -381,12 +396,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA9E4D7719BE522900E9E061 /* SlowDown.m in Sources */,
 				BAA23FAF198C7B1F0095FE5C /* BallOYarn.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				BA8AD81419BF85E30048B622 /* Background.m in Sources */,
 				BA9E4D7419BE4AE600E9E061 /* SpeedUp.m in Sources */,
 				BA9F0FA119BCFB5C003B2C84 /* Cloud.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				BAA23FA6198C58AD0095FE5C /* GameScene.m in Sources */,
+				BA8AD81819BF92590048B622 /* ShrinkDrop.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				BAA23FAA198C58C20095FE5C /* Cat.m in Sources */,
 			);

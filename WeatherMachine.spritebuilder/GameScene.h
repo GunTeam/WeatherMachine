@@ -10,10 +10,16 @@
 #import "cocos2d.h"
 #import "Cat.h"
 #import "BallOYarn.h"
+#import "Cloud.h"
+#import "SpeedUp.h"
+#import "ShrinkDrop.h"
+#import "Background.h"
+#import "SlowDown.h"
 
 @interface GameScene : CCNode <CCPhysicsCollisionDelegate> {
     CGFloat screenWidth,screenHeight;
     Cat *mainCat;
+    Cloud *cloud;
     CCPhysicsNode *_physicsNode;
     CGPoint currentTouch;
 }

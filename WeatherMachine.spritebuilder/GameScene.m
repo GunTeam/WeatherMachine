@@ -7,17 +7,19 @@
 //
 
 #import "GameScene.h"
-#import "Cloud.h"
-#import "SpeedUp.h"
 
 //debugging/playtesting variables
 double dropVelocity = 200;
 double dropInterval = 1.2;
-Cloud *cloud;
 
 @implementation GameScene
 
 -(void) didLoadFromCCB {
+    [[CCDirector sharedDirector] setDisplayStats:true];
+    Background *background = (Background *) [CCBReader load:@"Background"];
+    background.anchorPoint = CGPointMake(0, 0);
+    [self addChild:background];
+    
     self.dropVelocity = dropVelocity;
     self.level = 1;
     self.userInteractionEnabled = true;
@@ -59,8 +61,8 @@ Cloud *cloud;
     
     float rand = arc4random()%70;
     
+    
     BallOYarn *raindrop = (BallOYarn *)[CCBReader load:@"BallOYarn"];
-    SpeedUp *greendrop = (SpeedUp *)[CCBReader load:@"SpeedUp"];
     
     //generate random x position where the sprite will still be fully on the screen
     int randRange = screenWidth-raindrop.contentSizeInPoints.width;
@@ -69,11 +71,26 @@ Cloud *cloud;
     //assign sprite to generated x position and to y position just above the screen
     cloud.position = CGPointMake(posX, screenHeight*(99./100));
     //With a probability of 2/70, make the raindrop a powerup
-    if(rand <2){
+    if(rand <25){
+        SpeedUp *greendrop = (SpeedUp *)[CCBReader load:@"SpeedUp"];
         greendrop.position = CGPointMake(posX, screenHeight+greendrop.contentSizeInPoints.height/2);
         
         [_physicsNode addChild:greendrop];
         [greendrop setVelocity:self.dropVelocity];
+    }
+    else if(rand<50){
+        SlowDown *slowdown = (SlowDown *)[CCBReader load:@"SlowDown"];
+        slowdown.position = CGPointMake(posX, screenHeight+slowdown.contentSizeInPoints.height/2);
+        
+        [_physicsNode addChild:slowdown];
+        [slowdown setVelocity:self.dropVelocity];
+    }
+    else if(rand<70){
+        ShrinkDrop *shrinkdrop = (ShrinkDrop *)[CCBReader load:@"ShrinkDrop"];
+        shrinkdrop.position = CGPointMake(posX, screenHeight+shrinkdrop.contentSizeInPoints.height/2);
+        
+        [_physicsNode addChild:shrinkdrop];
+        [shrinkdrop setVelocity:self.dropVelocity];
     }
     else{
         raindrop.position = CGPointMake(posX, screenHeight+raindrop.contentSizeInPoints.height/2);
@@ -95,7 +112,35 @@ Cloud *cloud;
     }
     return true;
 }
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair cat:(Cat *)cat speedup:(SpeedUp *)speedup {
+    CCLOG(@"speedup collision");
+    //this speeds up the velocity of all the drops
+    self.dropVelocity+=50;
+    [speedup removeFromParent];
+    return true;
+}
 
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair cat:(Cat *)cat shrinkdrop:(ShrinkDrop *)shrinkdrop {
+    //this shrinks your main cat
+    double a = mainCat.scale;
+    if(mainCat.scale>0.2){
+    }
+    [shrinkdrop removeFromParent];
+    return true;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair cat:(Cat *)cat slowdown:(SlowDown *)slowdown {
+    CCLOG(@"slowdown collision");
+    //this slows the velocity of all the drops
+    if(self.dropVelocity > 50){
+        self.dropVelocity-=50;
+    }
+    else{
+        self.dropVelocity = 1;
+    }
+    [slowdown removeFromParent];
+    return true;
+}
 -(void) resetGame{
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"GameScene"]];
 }
@@ -147,7 +192,7 @@ Cloud *cloud;
     }
     float rand = arc4random()%70;
     
-    if(rand <1){
+    if(rand <2){
         [self addRainDrop:0];
     }
 }
