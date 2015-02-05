@@ -122,9 +122,7 @@ double dropInterval = 1.2;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair cat:(Cat *)cat shrinkdrop:(ShrinkDrop *)shrinkdrop {
     //this shrinks your main cat
-    double a = mainCat.scale;
-    if(mainCat.scale>0.2){
-    }
+    [mainCat shrink];
     [shrinkdrop removeFromParent];
     return true;
 }

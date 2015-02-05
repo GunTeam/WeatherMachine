@@ -16,5 +16,6 @@
 @property bool collidable;
 
 -(void) deathAnimation;
+-(void) shrink;
 
 @end

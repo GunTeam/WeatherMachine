@@ -16,7 +16,7 @@
 	<key>currentResolution</key>
 	<integer>0</integer>
 	<key>currentSequenceId</key>
-	<integer>1</integer>
+	<integer>0</integer>
 	<key>docDimensionsType</key>
 	<integer>1</integer>
 	<key>fileType</key>
@@ -54,7 +54,7 @@
 							<key>name</key>
 							<string>spriteFrame</string>
 							<key>time</key>
-							<real>0.0</real>
+							<real>0.066666670143604279</real>
 							<key>type</key>
 							<integer>7</integer>
 							<key>value</key>
@@ -133,7 +133,7 @@
 						<key>type</key>
 						<string>Check</string>
 						<key>value</key>
-						<true/>
+						<false/>
 					</dict>
 					<dict>
 						<key>name</key>
@@ -582,7 +582,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>Art/PurpleFins200dpi.png</string>
+					<string>Art/cat1.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -599,6 +599,8 @@
 				</array>
 			</dict>
 		</array>
+		<key>selected</key>
+		<true/>
 		<key>seqExpanded</key>
 		<true/>
 	</dict>
@@ -654,7 +656,7 @@
 			<key>name</key>
 			<string>Default Timeline</string>
 			<key>offset</key>
-			<real>0.0</real>
+			<real>0.59375</real>
 			<key>position</key>
 			<real>0.0</real>
 			<key>resolution</key>
