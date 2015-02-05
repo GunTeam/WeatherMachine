@@ -39,7 +39,7 @@ double dropInterval = 1.2;
     _physicsNode.collisionDelegate = self;
 
     
-    mainCat = (Cat *) [CCBReader load:@"Cat"];
+    mainCat = (Cat *) [CCBReader load:@"MainCat"];
     mainCat.position = CGPointMake(screenWidth/2, screenHeight/8);
     mainCat.scale = .8;
     [_physicsNode addChild:mainCat];
@@ -143,7 +143,7 @@ double dropInterval = 1.2;
     [[CCDirector sharedDirector] replaceScene:[CCBReader loadAsScene:@"GameScene"]];
 }
 
--(void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event{
+-(void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     CCLOG(@"touchBegan");
     CGPoint touchLocation = [touch locationInNode:self];
     if(touchLocation.y < (5./6)*screenHeight){
@@ -154,7 +154,7 @@ double dropInterval = 1.2;
     }
 }
 
--(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event{
+-(void) touchEnded:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     CGPoint touchLocation = [touch locationInNode:self];
     if(touchLocation.y < (5./6)*screenHeight){
         currentTouch = CGPointMake(touchLocation.x, touchLocation.y);
@@ -204,7 +204,7 @@ CGFloat CGPointToDegree(CGPoint point) {
     return bearingDegrees;
 }
 
--(void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event{
+-(void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event{
     CGPoint touchLocation = [touch locationInNode:self];
     currentTouch = touchLocation;
 //    if(touchLocation.y < (5./6)*screenHeight){
