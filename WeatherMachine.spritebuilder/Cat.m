@@ -23,7 +23,7 @@
     [animationManager runAnimationsForSequenceNamed:@"Death"];
 }
 -(void) shrink {
-    [self runAction:[CCActionScaleTo actionWithDuration:1 scale:0.4f]];
+    [self runAction:[CCActionScaleTo actionWithDuration:0.2 scale:0.4f]];
 }
 
 
